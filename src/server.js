@@ -12,8 +12,9 @@ app.get('/', (req, res) => {
     res.send('TIC TAC ONLINE');
 });
 
-server.listen(80, () => {
-    //console.log('Server is now running...');
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => {
+    console.log('Server is now running...');
 });
 
 io.on('connection', (socket) => {
